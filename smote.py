@@ -48,8 +48,8 @@ print(confusion_matrix(y, pred_y_0))
 
 ''' Applying SMOTE'''
 
-sm = SMOTE(random_state=12, ratio = 'auto')
-x_res, y_res = sm.fit_sample(X,y)
+sm = SMOTE(random_state=12, sampling_strategy='auto')
+x_res, y_res = sm.fit_resample(X,y)
 
 print( y.value_counts(), np.bincount(y_res))
 
